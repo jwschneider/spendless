@@ -21,11 +21,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private Account getAccountInfo(String name) {
-        
+
         int bufferSize = 70;
         Charset charset = Charset.forName("US-ASCII");
         Account acct = new Account(name);
-        String loc = String.format("/app/src/dat/%s.dat", name);
+        String loc = String.format("dat/%s.dat", name);
         char[] buffer = new char[bufferSize];
         try (FileReader data = new FileReader(loc)) {
 
@@ -36,5 +36,6 @@ public class MainActivity extends AppCompatActivity {
         catch(IOException excp) {
             System.err.printf("Could not open file %s.dat", name);
         }
+        return acct;
     }
 }
