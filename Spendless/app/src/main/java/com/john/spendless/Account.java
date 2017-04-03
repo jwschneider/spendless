@@ -17,10 +17,14 @@ public class Account {
     private ArrayList<Double> _dailySpending;
     private HashMap<String, Double> _catSpending;
 
-    public Account(String name, double budget) {
+    public Account(String name) {
         _name = name;
-        _budget = budget;
+        _budget = 0;
         _totalSpending = 0;
+    }
+
+    public void setBudget(double budget) {
+        _budget = budget;
     }
 
     public void setMonth(int month){
